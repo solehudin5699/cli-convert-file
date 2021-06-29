@@ -6,11 +6,13 @@ const convertFile = (directory, options) => {
     if (err) throw err;    
     
     // handler
-    if(options.type !== "text") return console.error("sorry did you mean 'text' ?")
+    if(options.type && options.type !== "text") return console.error("sorry did you mean 'text' ?")
     if(options.type && path.extname(directory).split('.')[1] === options.type) return console.error('cannot convert file to the same format')
     if(options.option && options.type === 'text' && path.extname(options.option).split(".")[1] !== "txt") return console.error('error in the new directory, ext must be txt')
     if(options.option && options.type === 'json' && path.extname(options.option).split(".")[1] !== "json") return console.error('error in the new directory, ext must be json')
-    
+ 
+
+
     const file = path.basename(directory)
     const new_name = file.split(".")[0]
     const dest = options.type === "json" ? path.join(path.dirname(directory), `${new_name}.json`):path.join(path.dirname(directory), `${new_name}.txt`);
@@ -23,6 +25,7 @@ const convertFile = (directory, options) => {
         console.log(`File Convert to ${options.type??path.extname(dest).split('.')[1]}:` + path.basename(options.option??dest));
       })
       .catch((err) => {
+        if(err.errno === -4068) return console.error("missing new filename in the new directory")
         console.error(err);
       });
   });
