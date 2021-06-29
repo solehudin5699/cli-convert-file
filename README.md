@@ -14,7 +14,7 @@
 1. Clone this Repository
 
 ```sh
-  git clone https://github.com/wildandhya/ZwalletApps.git
+  https://github.com/wildandhya/cli-convert-file.git
 ```
 
 2. Install NPM Packages
@@ -26,25 +26,23 @@
 3. Run the App
 
 ```sh
-npm start
+npm install -g
 ```
 
 ## Usage
 
-1. Clone this Repository
+1. example
 
 ```sh
-  git clone https://github.com/wildandhya/ZwalletApps.git
+  conv E:\Hello.txt -t json -o E:\helo\Hello.txt
 ```
 
-2. Install NPM Packages
+2. option
 
 ```sh
-  npm install
+  -t <type> json | text
 ```
-
-3. Run the App
-
 ```sh
-npm start
+  -o <new directory> E:\helo\Hello.txt
 ```
+
