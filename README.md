@@ -38,7 +38,7 @@ node index.js
 1. example
 
 ```sh
-  conv E:\Hello.txt -t json -o E:\helo\Hello.txt
+  conv E:\Hello.txt -t json -o E:\helo\Hello.json
 ```
 
 2. option
