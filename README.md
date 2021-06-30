@@ -24,9 +24,13 @@
 ```
 
 3. Run the App
-
+- run globally
 ```sh
 npm install -g
+```
+- run locally
+```sh
+node index.js 
 ```
 
 ## Usage
